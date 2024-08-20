@@ -1,4 +1,4 @@
-public package com.daroca.models;
+package com.daroca.models;
 
 import jakarta.persistence.*;
 
@@ -35,7 +35,7 @@ public class Product {
     @Column(nullable = false)
     private Boolean Discounted;
 
-    @OneToMany
+    @OneToMany 
     @JoinColumn(name = "product_category_id", foreignKey = @ForeignKey(name = "FK_ProductCategory"))
     private ProductCategory productCategory;
 
@@ -89,6 +89,5 @@ public class Product {
                 ", unitPrice=" + unitPrice +
                 '}';
     }
-} {
     
 }
