@@ -11,20 +11,20 @@ public class Product {
     @EmbeddedId
     private SalesOrderKey salesOrderKey;
 
-    @ManyToOne // cardinalidade da relação
+    @ManyToOne
     @MapsId("ProductId")
     @JoinColumn(name = "saProductid", foreignKey = @ForeignKey(name = "FK_ProductKey_Product"))
-    private Product Product;
+    private Product product;
     
-    @ManyToOne // cardinalidade da relação
+    @ManyToOne
     @MapsId("SupplierId")
     @JoinColumn(name = "Supplier_id", foreignKey = @ForeignKey(name = "FK_ProductKey_Supplier"))
-    private Supplier Supplier;
+    private Supplier supplier;
 
-    @ManyToOne // cardinalidade da relação
+    @ManyToOne
     @MapsId("Product_categoryId")
     @JoinColumn(name = "Product_category_id", foreignKey = @ForeignKey(name = "FK_ProductKey_Product_category"))
-    private ProductCategory ProductCategory;
+    private ProductCategory productCategory2;
 
     @Column(length = 50, nullable = false)
     private String name;
@@ -33,11 +33,7 @@ public class Product {
     @Column(nullable = false)
     private Int unitsInStock;
     @Column(nullable = false)
-    private Boolean Discounted;
-
-    @OneToMany 
-    @JoinColumn(name = "product_category_id", foreignKey = @ForeignKey(name = "FK_ProductCategory"))
-    private ProductCategory productCategory;
+    private Boolean discounted;
 
     public Product(Integer id, String name, String email, Double latitude, Double longitude) {
         this.ProductId = id;

@@ -21,13 +21,13 @@ public class Customer {
     private String postalcode;
 
 
-    public Customer(Integer id, String name, String Address, String City, String State, String PostalCode) {
+    public Customer(Integer id, String name, String address, String customerCity, String customerState, String customerPostalCode) {
         this.id = id;
         this.name = name;
-        this.city = City;
-        this.address = Address;
-        this.state = State;
-        this.postalcode = PostalCode;
+        this.city = customerCity;
+        this.address = address;
+        this.state = customerState;
+        this.postalcode = customerPostalCode;
     }
 
 
@@ -113,7 +113,7 @@ public class Customer {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Customer other = (Customer) obj;
+        ProductCategory other = (ProductCategory) obj;
         if (id == null) {
             if (other.id != null)
                 return false;

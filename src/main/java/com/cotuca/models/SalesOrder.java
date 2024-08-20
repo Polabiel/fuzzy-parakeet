@@ -1,3 +1,4 @@
+package com.cotuca.models;
 
 import jakarta.persistence.*;
 
@@ -12,20 +13,20 @@ public class SalesOrder {
     @EmbeddedId
     private SalesOrderKey salesOrderKey;
     
-    @ManyToOne // cardinalidade da relação
+    @ManyToOne
     @MapsId("CustomerId")
     @JoinColumn(name = "customer_id", foreignKey = @ForeignKey(name = "FK_SalesOrder_Customer"))
-    private Customer Customer;
+    private ProductCategory customer;
 
-    @ManyToOne // cardinalidade da relação
+    @ManyToOne
     @MapsId("EmployeeId")
     @JoinColumn(name = "Employee_id", foreignKey = @ForeignKey(name = "FK_SalesOrder_Employee"))
-    private Employee Employee;
+    private Employee employee;
 
-    @ManyToOne // cardinalidade da relação
+    @ManyToOne
     @MapsId("ShipperId")
     @JoinColumn(name = "Shipper_id", foreignKey = @ForeignKey(name = "FK_SalesOrder_Shipper"))
-    private Shipper Shipper;
+    private Shipper shipper;
 
 
     @Column(nullable = false)
