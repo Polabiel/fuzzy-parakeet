@@ -1,4 +1,4 @@
-package com.daroca.models;
+package com.cotuca.models;
 
 import jakarta.persistence.*;
 
