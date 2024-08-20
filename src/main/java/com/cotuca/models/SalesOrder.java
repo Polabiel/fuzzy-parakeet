@@ -1,5 +1,3 @@
-package com.cotuca.models;
-
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -101,7 +99,8 @@ public class SalesOrder {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof SalesOrder that)) return false;
+        if (!(o instanceof SalesOrderItem that))
+            return false;
         return Objects.equals(SalesOrderId, that.SalesOrderId) && Objects.equals(orderDate, that.orderDate) && Objects.equals(estimatedDeliveryDate, that.estimatedDeliveryDate) && Objects.equals(status, that.status) && Objects.equals(total, that.total);
     }
 
